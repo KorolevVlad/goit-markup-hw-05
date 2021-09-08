@@ -70,6 +70,8 @@ body {
   display: flex;
   align-content: center;
   align-items: center;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navigation:hover,
@@ -80,7 +82,7 @@ body {
 }
 
 /* стили контейнера хедера */
-/* .container, */
+
 .container-header {
   display: flex;
 
@@ -166,6 +168,8 @@ body {
   text-align: center;
 
   border: none;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-display {
@@ -178,6 +182,10 @@ body {
 .button-write-to-us:focus {
   background-color: #188ce8;
   cursor: pointer;
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 }
 
 /* оформление bg основного меню */
@@ -221,6 +229,8 @@ body {
   height: 44px;
   border-radius: 50%;
   color: #afb1b8;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-social-network:hover {
@@ -324,6 +334,7 @@ body {
 .container-images {
   margin-right: 30px;
   width: 370px;
+  position: relative;
 }
 
 img {
@@ -332,6 +343,33 @@ img {
 
 .container-images:last-child {
   margin-right: 0;
+}
+
+/* фоновая подпись на фото */
+
+.text-absolute {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+
+.container-image-absolute {
+  content: '';
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 70px;
+  background: rgba(47, 48, 58, 0.8);
+  left: 0;
+  bottom: 0;
 }
 
 /* наша команда, стили, сетка */
@@ -490,6 +528,8 @@ ul {
   border-radius: 50%;
   color: #fff;
   background: rgba(255, 255, 255, 0.1);
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-link-social-network:hover {
@@ -530,6 +570,8 @@ ul {
 
 .button-portfolio {
   background-color: #f5f4fa;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-portfolio:hover,
@@ -560,12 +602,66 @@ ul {
 
 /* выделение текущей вкладки */
 .activ-button {
+  position: relative;
+  display: block;
+
+  padding: 32px 0;
   color: var(--primare-blue-color);
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 1.14;
   letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.activ-button::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: #2196f3;
+  border-radius: 2px;
+}
+
+.navigation {
+  position: relative;
+}
+
+.navigation::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: #2196f3;
+  border-radius: 2px;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  opacity: 0;
+}
+
+.container-header-button:hover .navigation::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: #2196f3;
+  border-radius: 2px;
+
+  opacity: 1;
 }
 
 /* фокус и ховер кнопок */
@@ -604,15 +700,8 @@ ul {
   background-color: #fff;
   margin-right: 30px;
   margin-bottom: 30px;
-  /* padding: 0; */
   width: 370px;
 }
-
-/* .container-projects:hover,
-.container-projects:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-} */
 
 .portfolio-about-our-works {
   padding: 20px 24px;
@@ -637,8 +726,46 @@ ul {
   display: block;
 }
 
-.our-projects-web:hover,
-.our-projects-web:focus {
+.portfolio-projects-absolute {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-image-absolute {
+  content: '';
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+  background: rgba(33, 150, 243, 0.9);
+
+  left: 0;
+  bottom: 0;
+  padding: 63px 24px;
+
+  transform: translateY(100%);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.container-projects:hover .portfolio-image-absolute {
+  transform: translateY(0);
+}
+
+.portfolio-text-absolute {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+
+  color: #ffffff;
+}
+
+.container-projects:hover,
+.container-projects:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
@@ -675,7 +802,6 @@ ul {
 
   margin: 0;
   padding: 0;
-  /* margin-top: 62px; */
 }
 
 .list-regular-clients {
@@ -700,6 +826,8 @@ ul {
   border-radius: 4px;
 
   color: #afb1b8;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-regular-client:hover {
@@ -711,4 +839,63 @@ ul {
   fill: currentColor;
   width: 106px;
   height: 60px;
+}
+
+/* модальное окно */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-height: 581px;
+  min-width: 528px;
+
+  background-color: #fff;
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+
+  transform: translate(-50%, 50%);
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.svg-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-9px, 9px);
+  width: 11px;
+  height: 11px;
 }

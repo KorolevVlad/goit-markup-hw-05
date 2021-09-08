@@ -14,13 +14,14 @@
     
 </head>
 <body>
+
     <!-- шапка сайта -->
     <header class="contact-us header-border">
         <div class="container container-header">
         <nav class="container-header-logo">
             <a href="./index.html" class="logo"><span>Web</span>Studio</a>
             <ul class="container-header">
-                <li class="container-header-button"><a href="" class="navigation activ-button">Студия</a></li>
+                <li class="container-header-button"><a href="" class="activ-button">Студия</a></li>
                 <li class="container-header-button"><a href="./portfolio/portfolio.html" class="navigation">Портфолио</a></li>
                 <li class="container-header-button"><a href="" class="navigation">Контакты</a></li>
             </ul>
@@ -53,11 +54,21 @@
             <section class="solution solution-decor">
                 <div class="container button-display">
             <h1 class="main-solution">Эффективные решения для вашего бизнеса</h1>
-            <button type="button" class="button-write-to-us">Заказать услугу</button>
+           
+            <button type="button" class="button-write-to-us" data-modal-open>Заказать услугу</button>
+        </div>
+        <div class="backdrop is-hidden" data-modal>
+            <div class="modal">
+                <div class="button-close" data-modal-close>
+                
+                    <svg class="svg-close">
+                        <use href="./images/sprite.svg#icon-close"></use>
+                    </svg>
+                </div>
+            </div>
+            
         </div>
         </section>
-    
-       
            <section class="main-menu">
             <div class="container">
         <!-- наши преимущества -->
@@ -114,12 +125,28 @@
                 <div class="container">
                 <h2 class="about-us">Чем мы занимаемся</h2>
                 <ul class="display">
-                    <li class="container-images"><img src="./images/box1.jpg" alt="рабочее пространство сотрудника" width="370"
-                            height="294"></li>
-                    <li class="container-images"><img src="./images/box2.jpg" alt="рабочее пространство сотрудника" width="370"
-                            height="294"></li>
-                    <li class="container-images"><img src="./images/box3.jpg" alt="рабочее пространство сотрудника" width="370"
-                            height="294"></li>
+                    <li class="container-images">
+                        <img src="./images/box1.jpg" alt="рабочее пространство сотрудника" width="370" height="294">
+                            <div class="container-image-absolute">
+                                <p class="text-absolute">Десктопные приложения
+
+                                </p>
+                            </div>
+                    </li>
+                    <li class="container-images">
+                        <img src="./images/box2.jpg" alt="рабочее пространство сотрудника" width="370" height="294">
+                            <div class="container-image-absolute">
+                                <p class="text-absolute">Мобильные приложения
+                            
+                                </p>
+                        </li>
+                    <li class="container-images">
+                        <img src="./images/box3.jpg" alt="рабочее пространство сотрудника" width="370" height="294">
+                            <div class="container-image-absolute">
+                                <p class="text-absolute">Дизайнерские решения
+                            
+                                </p>
+                        </li>
                 </ul>
                 </div>
             </section>
@@ -380,5 +407,6 @@
 </div>
             </div> 
         </footer>
-</body>
+        <script src="./js/modal.js"></script>
+    </body>
 </html>
