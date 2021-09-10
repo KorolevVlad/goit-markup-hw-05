@@ -71,7 +71,7 @@ body {
   align-content: center;
   align-items: center;
 
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navigation:hover,
@@ -169,7 +169,9 @@ body {
 
   border: none;
 
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-display {
@@ -230,7 +232,8 @@ body {
   border-radius: 50%;
   color: #afb1b8;
 
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-social-network:hover {
@@ -461,6 +464,8 @@ span {
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   text-align: left;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-contacts-decoration:last-child {
@@ -529,7 +534,8 @@ ul {
   color: #fff;
   background: rgba(255, 255, 255, 0.1);
 
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-link-social-network:hover {
@@ -571,7 +577,10 @@ ul {
 .button-portfolio {
   background-color: #f5f4fa;
 
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-portfolio:hover,
@@ -630,6 +639,7 @@ ul {
 
 .navigation {
   position: relative;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navigation::after {
@@ -644,7 +654,7 @@ ul {
   background: #2196f3;
   border-radius: 2px;
 
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   opacity: 0;
 }
@@ -747,7 +757,7 @@ ul {
   padding: 63px 24px;
 
   transform: translateY(100%);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .container-projects:hover .portfolio-image-absolute {
@@ -827,7 +837,8 @@ ul {
 
   color: #afb1b8;
 
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-regular-client:hover {
@@ -850,7 +861,8 @@ ul {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
